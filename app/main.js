@@ -25,7 +25,7 @@ router.run((Root, state) => {
   // Way #3, inject outside of router, use here
   let app = (
     <Wrapper>
-      <Root />
+      <Root cerebral={cerebral} />
     </Wrapper>
   )
   React.render(app, document.querySelector('#app'))

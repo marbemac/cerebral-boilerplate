@@ -10,7 +10,7 @@ let Login = React.createClass({
   },
   onInputValueSubmit(event) {
     event.preventDefault();
-    if (this.props.inputValue) {
+    if (this.state.inputValue) {
       this.signals.inputValueSubmitted();
     }
   },
@@ -24,11 +24,11 @@ let Login = React.createClass({
     return (
       <div>
         <h1>Login</h1>
-        <form onSubmit={this.onInputValueSubmit.bind(this)}>
-          <input type="text" value={this.props.inputValue} onChange={this.changeInputValue.bind(this)}/>
+        <form onSubmit={this.onInputValueSubmit}>
+          <input type="text" value={this.state.inputValue} onChange={this.changeInputValue}/>
         </form>
         <ul>
-          {this.props.list.map(this.renderListItem)}
+          {this.state.list.map(this.renderListItem)}
         </ul>
         <Link to='register'>Register</Link>
       </div>
