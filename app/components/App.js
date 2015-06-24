@@ -1,7 +1,11 @@
 import React from 'react';
-import { RouteHandler } from 'react-router';
+import { Link, RouteHandler } from 'react-router';
 
 let App = React.createClass({
+  propTypes: {
+    cerebral: React.PropTypes.object.isRequired
+  },
+
   childContextTypes: {
     cerebral: React.PropTypes.object
   },
@@ -9,7 +13,7 @@ let App = React.createClass({
   getChildContext: function() {
     return {
       cerebral: this.props.cerebral
-    };
+    }
   },
 
   render() {
@@ -17,6 +21,7 @@ let App = React.createClass({
       <div>
         <h1>Hello world!</h1>
         <RouteHandler />
+        <Link to='variables'>Variables</Link>
       </div>
     );
   }
