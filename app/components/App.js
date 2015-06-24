@@ -21,6 +21,7 @@ let App = React.createClass({
       <div>
         <h1>Hello world!</h1>
         <RouteHandler />
+        <br />
         <Link to='variables'>Variables</Link>
       </div>
     );

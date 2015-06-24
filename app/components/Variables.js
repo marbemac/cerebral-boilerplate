@@ -8,7 +8,8 @@ let Login = React.createClass({
   getCerebralState() {
     return {
       user: ['currentUser'],
-      variables: ['currentVariables']
+      variables: ['currentVariables'],
+      unsetTest: ['unsetTest']
     }
   },
   render() {
@@ -18,13 +19,15 @@ let Login = React.createClass({
         <br />
         <div>Current Variables: {this.state.variables}</div>
         <br />
-        <button onClick={this.setCurrentUser}>Set Current User</button>
+        <button onClick={this.signals.setCurrentUser}>Set Current User</button>
+        <br />
+        <br />
+        <div>
+          unsetTest: {JSON.stringify(this.state.unsetTest.toJS())}
+        </div>
+        <button onClick={this.signals.runUnsetTest}>Run Unset Test</button>
       </div>
     );
-  },
-
-  setCurrentUser() {
-    this.signals.setCurrentUser()
   }
 })
 

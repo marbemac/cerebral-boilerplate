@@ -4,6 +4,11 @@ let cerebral = Cerebral({
   inputValue: '',
   list: [],
 
+  unsetTest: {
+    foo: 'bar',
+    removeMe: 'please'
+  },
+
   users: {
     marc: {
       name: 'marc',

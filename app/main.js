@@ -7,10 +7,12 @@ import AppWrapper from './components/AppWrapper.js';
 import setInputValue from './actions/setInputValue.js';
 import addItem from './actions/addItem.js';
 import setCurrentUser from './actions/setCurrentUser.js';
+import unsetTest from './actions/unsetTest.js';
 
 cerebral.signal('inputValueChanged', setInputValue);
 cerebral.signal('inputValueSubmitted', addItem);
 cerebral.signal('setCurrentUser', setCurrentUser);
+cerebral.signal('runUnsetTest', unsetTest);
 
 let Wrapper = cerebral.injectInto(AppWrapper);
 
